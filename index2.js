@@ -12,7 +12,8 @@ const bSum = sum(b);
 const cSum = sum(c);
 const dSum = sum(d);
 
-const arrArrays = [a, b, c, d];
+const newA = a.sort((a, b) => a - b);
+const arrArrays = [newA, b, c, d, e];
 
 const arrArraysSum = arrArrays.map(x => sum(x));
 
