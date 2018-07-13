@@ -4,9 +4,9 @@ const index = require('./index2.js');
 let tot = [];
 let test = 10;
 
-const findArrClosest = (arr, countIndex = 0) =>{
-    let tot = [];
-    let ind = arr[0][countIndex];
+
+const  mapping = (arr, ind) => {
+    let tot = []
     let sum = 0;
     let array = arr.map((x, index) => {
         index++;
@@ -16,41 +16,51 @@ const findArrClosest = (arr, countIndex = 0) =>{
         let first = 50 - sum;
         let second = index === 5 ? 1 : arr.length - index;
         ind =  Math.floor(first / second);
+        console.log('tot', tot);
         return x;
     })
-    if (main.sum(tot) === 50) {
-        console.log('here >>>>>>>>>>>>>>>>>>>>>>>');
-        return {
-            array,
-            tot
-        };
+    return {
+        tot,
+        array,
+    }
+}
+
+const findArrClosest = (arr, countIndex = 0) =>{
+    let ind = arr[0][countIndex];
+    let mattia = [];
+    mattia = mapping(arr, ind);
+    //const pickedArray = array.tot;
+    //const mainArray = array.array;
+    if (main.sum(mattia.tot) === 50) {
+        console.log('tot after = ', mattia.tot);
+        return mattia;
     } else {
         countIndex++;
         if (test > 0) {
             test--;
-            findArrClosest(arr, countIndex);
+            findArrClosest(mattia.array, countIndex);
         }
     }
-    return {
-        array,
-        tot,
-    };
+    //console.log('here', mattia);
+    //return mattia;
+    //return [
+        //mainArray,
+        //pickedArray,
+    //];
+
 }
 
 const removeIndex = (arr, arrIndex) => {
+    console.log('arr', arr);
+    console.log('index', arrIndex);
     let count = 0;
     tot = [];
-    cc = arr.map(x => {
+    return arr.map(x => {
         let index = x.indexOf(arrIndex[count]);
-        //console.log('index', index, arrIndex[count]);
-        //console.log('>>>>>>>>>.', x);
         x.splice(index, 1);
         count++;
-        //console.log('>>>', x.length);
         return x;
     })
-    return cc;
-    console.log('asdfdfsf', cc)
 }
 
 const numToSearch = num => {
