@@ -26,7 +26,6 @@ const  mapping = (arr, ind) => {
 }
 
 const findArrClosest = (arr, countIndex) =>{
-    console.log('Array passed = ', arr);
     let ind = arr[0][countIndex];
     const mattia = mapping(arr, ind);
     return mattia;

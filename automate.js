@@ -15,10 +15,12 @@ const iterate = (array = arr) => {
     if(array[0].length > 0) {
         let arrayFound = findArrClosest(array, count);
         if (index.sum(arrayFound.tot) === 50) {
-            count = 0;
+            console.log('here');
             arrayFound = removeIndex(arrayFound.array, arrayFound.tot);
         }
-        count++;
+        count = arrayFound.array[Math.floor(Math.random() * arrayFound.array.length)];
+        console.log('count', count)
+
         if (count < 10) {
             iterate(arrayFound.array, count);
         }
