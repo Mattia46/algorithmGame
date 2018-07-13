@@ -16,7 +16,7 @@ const  mapping = (arr, ind) => {
         let first = 50 - sum;
         let second = index === 5 ? 1 : arr.length - index;
         ind =  Math.floor(first / second);
-        console.log('tot', tot);
+        //console.log('tot', tot);
         return x;
     })
     return {
@@ -25,34 +25,14 @@ const  mapping = (arr, ind) => {
     }
 }
 
-const findArrClosest = (arr, countIndex = 0) =>{
+const findArrClosest = (arr, countIndex) =>{
+    console.log('Array passed = ', arr);
     let ind = arr[0][countIndex];
-    let mattia = [];
-    mattia = mapping(arr, ind);
-    //const pickedArray = array.tot;
-    //const mainArray = array.array;
-    if (main.sum(mattia.tot) === 50) {
-        console.log('tot after = ', mattia.tot);
-        return mattia;
-    } else {
-        countIndex++;
-        if (test > 0) {
-            test--;
-            findArrClosest(mattia.array, countIndex);
-        }
-    }
-    //console.log('here', mattia);
-    //return mattia;
-    //return [
-        //mainArray,
-        //pickedArray,
-    //];
-
+    const mattia = mapping(arr, ind);
+    return mattia;
 }
 
 const removeIndex = (arr, arrIndex) => {
-    console.log('arr', arr);
-    console.log('index', arrIndex);
     let count = 0;
     tot = [];
     return arr.map(x => {
