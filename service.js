@@ -16,7 +16,6 @@ const  mapping = (arr, ind) => {
         let first = 50 - sum;
         let second = index === 5 ? 1 : arr.length - index;
         ind =  Math.floor(first / second);
-        //console.log('tot', tot);
         return x;
     })
     return {
